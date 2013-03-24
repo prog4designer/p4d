@@ -1,28 +1,22 @@
-== README
+# P4D
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+P4D デザイナー向けプログラム部 の meetup 用 Web アプリケーションになる予定です。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+実際に meetup のときにデザイナ / エンジニアで協力しながら作り上げていきましょう！
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## 開発に必要なもの
+
+- Ruby 2.0.0-p0
+- Rails 4.0.0.beta1
+
+
+## 動かし方
+
+```
+$ git clone git@github.com:prog4designer/p4d.git
+$ cd p4d
+$ bundle install --path vendor/bundle
+$ rake db:migrate
+$ rails s
+```
