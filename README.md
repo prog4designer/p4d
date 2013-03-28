@@ -33,7 +33,7 @@ URL : [ http://0.0.0.0:3000/ ](※自分のローカル環境用URL)
 Callback URL : [ http://0.0.0.0:3000/ ](※自分のローカル環境用URL)
 ```
 
-config/settings.local.yml
+config/settings.local.yml (settings.local.yml.sample をコピーして使ってください)
 
 ```yaml
 # GitHub OAuth Setting
