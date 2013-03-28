@@ -7,9 +7,6 @@ Bundler.require(*Rails.groups(assets: %w(development test)))
 
 module P4d
   class Application < Rails::Application
-    # For Heroku
-    config.assets.initialize_on_precompile = false
-
     # For Tapp
     Tapp.config.default_printer = :awesome_print
 

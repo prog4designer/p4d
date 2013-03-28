@@ -11,8 +11,7 @@ class ApplicationController < ActionController::Base
   def authorize
     # セッション／トップコントローラ以外で
     if params[:controller] != "sessions" and params[:controller] != "top"
-      # 未ログインであれば
-      if current_user.blank?
+      unless user_signed_in?
         # リクエストURL保管
         session[:request_url] = request.url
 
@@ -32,4 +31,10 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.where( id: session[:user_id] ).first
   end
   helper_method :current_user
+
+  # ユーザ登録チェック
+  def user_signed_in?
+    User.where( id: session[:user_id] ).exists?
+  end
+  helper_method :user_signed_in?
 end
