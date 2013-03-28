@@ -20,3 +20,29 @@ $ bundle install --path vendor/bundle
 $ rake db:migrate
 $ rails s
 ```
+
+* GitHubキー設定
+
+https://github.com/settings/applications
+
+```
+Name : [ Local Development ](※何でもよい)
+
+URL : [ http://0.0.0.0:3000/ ](※自分のローカル環境用URL)
+
+Callback URL : [ http://0.0.0.0:3000/ ](※自分のローカル環境用URL)
+```
+
+config/settings.local.yml
+
+```yaml
+# GitHub OAuth Setting
+github_client_id: "Client ID"
+github_secret:    "Client Secret"
+```
+
+```
+rails s
+```
+
+http://0.0.0.0:3000/

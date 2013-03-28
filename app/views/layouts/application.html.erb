@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>P4d</title>
+  <title><%= Settings.app_name %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<%= link_to Settings.app_name, :root %>
+
+<% if signed_in? %>
+  <%# ログイン済み %>
+  <%= render partial: '/layouts/user_icon', locals: { user: current_user, size: "18x18", klass: "margin_minus2" } %>
+  <%= link_to( "Top", root_path ) %>
+  <%= link_to( "Logout", logout_path ) %>
+<% else %>
+  <%# 未ログイン %>
+  Login:
+  <%= link_to "GitHub", "/auth/gitHub" %>
+<% end %>
+
+<%# 通知／エラーメッセージ %>
+<%= simple_format( flash[:notice], style: "color: green;" ) if flash[:notice].present? %>
+<%= simple_format( flash[:alert], style: "color: red;" ) if flash[:alert].present? %>
+
 <%= yield %>
+
+<br /><br />
+
+<center>
+  Developed and Designed by <a href="http://prog4designer.github.com/" target="_blank">P4D Members</a>,
+  Licence by <a href="https://creativecommons.org/licenses/by-nc-sa/2.1/jp/" target="_blank">CC BY-NC-SA 2.1</a>
+</center>
 
 </body>
 </html>
