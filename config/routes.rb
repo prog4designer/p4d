@@ -1,4 +1,11 @@
 P4d::Application.routes.draw do
+  root to: 'top#index'
+
+  # For OmniAuth
+  get "/auth/:provider/callback" => "sessions#callback"
+  get "/auth/failure"            => "sessions#failure"
+  get "/logout"                  => "sessions#destroy", as: :logout
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
