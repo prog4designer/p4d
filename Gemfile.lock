@@ -60,7 +60,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.21)
-    minimum-omniauth-scaffold (0.1.1)
+    minimum-omniauth-scaffold (0.1.3)
       awesome_print
       omniauth-facebook
       omniauth-github
